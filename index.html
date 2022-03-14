@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Johanna</title>
+    <meta name="theme-color" content="#262627" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name='viewport' content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300">
+    <style type="text/css">
+        body, html {
+          margin: 0px;
+          height: 100%;
+          width: 100%;
+          font-family: 'Roboto Slab';
+          background: #262627;
+          color: #FFF;
+          text-shadow: 1px 1px 1px #000;
+        }
+
+        .main {
+          position: relative;
+          top: 20%;
+          transform: translateY(-50%);
+          text-align: center;
+        }
+
+        h1 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          font-size: 60px;
+          font-weight: normal;
+        }
+
+        h3 {
+          font-weight: normal;
+          margin-top: 0px;
+          margin-bottom: 50px;
+        }
+
+        a {
+          font-weight: normal;
+          color: #A9A9A9;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Johanna H.</h1>
+      <h3>I write code, watch Anime and do some stuff.</h3>
+      <p>
+      Born and raised in Germany, Moved to USA and back to Germany, I spend a lot of time sitting in front of my LapTop and yelling. 
+      </p>
+      <p>
+      If you're interested, check out my code on <a href="https://github.com/HdlJohanna">GitHub</a>.
+      </p>
+    </div>
+  </body>
+  <script>
+    var lr = 26, lg = 26, lb = 26;
+
+    function fadeColor() {
+      var r = Math.round(Math.random()* 127) + 127;
+      var g = Math.round(Math.random()* 127) + 127;
+      var b = Math.round(Math.random()* 127) + 127;
+
+      var fade = setInterval(function () {
+        if (lr > r) lr--;
+        if (lr < r) lr++;
+        if (lg > g) lg--;
+        if (lg < g) lg++;
+        if (lb > b) lb--;
+        if (lb < b) lb++;
+        if (lr == r && lg == g && lb == b) {
+          clearInterval(fade);
+          fadeColor();
+        }
+
+        document.body.style.background = "#" + lr.toString(16) + lg.toString(16) + lb.toString(16);
+      }, 50);
+    }
+
+    fadeColor();
+  </script>
+</html>
